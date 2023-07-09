@@ -1,0 +1,33 @@
+import newspaper
+
+url=input("Enter your URL:")
+
+article=newspaper.Article(url)
+article.download()
+article.parse()
+
+title=article.title
+content=article.text
+
+print("Title:", title)
+print("Content:", content)
+
+
+
+# import requests
+# from bs4 import BeautifulSoup
+
+# url=input("Enter your URL:")
+
+# responses =requests.get(url)
+
+# soup= BeautifulSoup(responses.content,'html.parser')
+
+# try:
+#     title=soup.title.string
+#     article=soup.find('article')
+#     content=article.text if article else None
+#     print("Title:",title,"\n")
+#     print(content,"\n")
+# except:
+#     pass
